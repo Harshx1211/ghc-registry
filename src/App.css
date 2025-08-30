@@ -1,0 +1,82 @@
+/* Main App Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+  flex: 1;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: calc(100vh - 140px); /* Account for navbar and footer */
+}
+
+/* Footer */
+.footer {
+  background: #2d3748;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #4a5568;
+}
+
+/* 404 Page */
+.notFound {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  margin: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.notFound h2 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.notFound p {
+  color: #4a5568;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.homeLink {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.homeLink:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+/* Global Responsive */
+@media (max-width: 768px) {
+  .main {
+    min-height: calc(100vh - 120px);
+  }
+  
+  .footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .notFound {
+    margin: 1rem;
+    padding: 2rem 1rem;
+  }
+  
+  .notFound h2 {
+    font-size: 1.5rem;
+  }
+}

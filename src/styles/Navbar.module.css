@@ -1,0 +1,166 @@
+/* Navbar Container */
+.navbar {
+  background: #2d3748;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* Brand/Logo */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.brand:hover {
+  color: #81e6d9;
+}
+
+.brandIcon {
+  margin-right: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.brandText {
+  display: none;
+}
+
+/* Desktop Navigation */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  background: #4a5568;
+  color: white;
+}
+
+.navLinkActive {
+  background: #667eea;
+  color: white;
+}
+
+.navIcon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: #e2e8f0;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Mobile Navigation */
+.mobileMenu {
+  display: none;
+  background: #2d3748;
+  border-top: 1px solid #4a5568;
+  padding: 1rem 0;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #e2e8f0;
+  padding: 0.75rem 2rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.mobileNavLink:hover {
+  background: #4a5568;
+  color: white;
+}
+
+.mobileNavLinkActive {
+  background: #667eea;
+  color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .brandText {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0 1rem;
+  }
+  
+  .navLinks {
+    display: none;
+  }
+  
+  .mobileMenuButton {
+    display: flex;
+  }
+  
+  .mobileMenu {
+    display: block;
+  }
+  
+  .brand {
+    font-size: 1.25rem;
+  }
+  
+  .brandIcon {
+    margin-right: 0.25rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    height: 60px;
+  }
+  
+  .mobileNavLink {
+    padding: 0.75rem 1rem;
+  }
+}
