@@ -7,11 +7,11 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/producer', label: 'Producer', icon: '🏭' },
-    { path: '/certifier', label: 'Certifier', icon: '✅' },
-    { path: '/buyer', label: 'Buyer', icon: '💼' },
-    { path: '/regulator', label: 'Regulator', icon: '🏛️' }
+    { path: '/', label: 'Home' },
+    { path: '/producer', label: 'Producer' },
+    { path: '/certifier', label: 'Certifier' },
+    { path: '/buyer', label: 'Buyer' },
+    { path: '/regulator', label: 'Regulator' }
   ];
 
   const isActivePath = (path) => {
@@ -23,7 +23,6 @@ const Navbar = () => {
       <div className={styles.navContainer}>
         {/* Logo/Brand */}
         <Link to="/" className={styles.brand}>
-          <span className={styles.brandIcon}>🌱</span>
           <span className={styles.brandText}>HydraGreen</span>
         </Link>
 
@@ -35,24 +34,24 @@ const Navbar = () => {
               to={item.path}
               className={`${styles.navLink} ${isActivePath(item.path) ? styles.navLinkActive : ''}`}
             >
-              <span className={styles.navIcon}>{item.icon}</span>
-              <span>{item.label}</span>
+              {item.label}
             </Link>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - 3 Lines */}
         <button
           className={styles.mobileMenuButton}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation menu"
         >
-          <span className={styles.hamburger}></span>
-          <span className={styles.hamburger}></span>
-          <span className={styles.hamburger}></span>
+          <div className={styles.hamburgerLine}></div>
+          <div className={styles.hamburgerLine}></div>
+          <div className={styles.hamburgerLine}></div>
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Dropdown */}
       {isMobileMenuOpen && (
         <div className={styles.mobileMenu}>
           {navItems.map((item) => (
@@ -62,8 +61,7 @@ const Navbar = () => {
               className={`${styles.mobileNavLink} ${isActivePath(item.path) ? styles.mobileNavLinkActive : ''}`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <span className={styles.navIcon}>{item.icon}</span>
-              <span>{item.label}</span>
+              {item.label}
             </Link>
           ))}
         </div>
